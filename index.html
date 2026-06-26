@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hasnain JAC Premium Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="img/jac.png" type="image/x-icon">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,#7c3aed55,transparent 30%),
+radial-gradient(circle at bottom right,#06b6d455,transparent 30%);
+z-index:-1;
+}
+
+/* logo img */
+.ilogo{
+background-image: url(./img/logo.png);
+background-position: center;
+background-size: cover;
+height: 60px;
+width: 60px;
+border-radius:50%;
+box-shadow:0 0 10px rgba(124,58,237,0.4);
+}
+
+nav{
+height: 50px;
+display:flex;
+align-items:center;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:14px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+background:rgba(5,8,22,0.55);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,0.06);
+transition:0.3s;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo h2{
+font-size:24px;
+font-weight:700;
+}
+
+nav a{
+position:relative;
+color:white;
+text-decoration:none;
+margin-left:30px;
+transition:0.3s;
+font-weight:500;
+font-size:15px;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:2px;
+background:linear-gradient(45deg,#06b6d4,#ec4899);
+transition:0.3s;
+}
+
+nav a:hover{
+color:#06b6d4;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.menu-btn{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* MOBILE NAV */
+nav.open{
+display:flex !important;
+position:fixed;
+top:78px;
+left:0;
+width:100%;
+flex-direction:column;
+background:#0a0f24;
+padding:20px 8%;
+gap:5px;
+height:auto;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav.open a{
+margin:12px 0;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:140px 8% 80px;
+flex-wrap:wrap;
+gap:50px;
+}
+
+.hero-text{
+flex:1;
+min-width:300px;
+animation:fadeUp 1s ease;
+}
+
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 18px;
+border-radius:30px;
+border:1px solid rgba(6,182,212,0.4);
+background:rgba(6,182,212,0.08);
+font-size:13px;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#22d3ee;
+margin-bottom:22px;
+}
+
+.eyebrow span{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#22d3ee;
+box-shadow:0 0 10px #22d3ee;
+animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+0%,100%{opacity:1;}
+50%{opacity:0.3;}
+}
+
+.hero-text h1{
+font-size:68px;
+line-height:1.15;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.hero-text span{
+background:linear-gradient(45deg,#06b6d4,#ec4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.typing{
+font-size:26px;
+color:#06b6d4;
+margin-bottom:22px;
+height:36px;
+font-weight:600;
+}
+
+.typing::after{
+content:"|";
+animation:blink 0.8s infinite;
+}
+
+@keyframes blink{
+50%{opacity:0;}
+}
+
+.hero-text p{
+max-width:620px;
+line-height:1.85;
+color:#94a3b8;
+margin-bottom:35px;
+font-size:16px;
+}
+
+.stats{
+display:flex;
+gap:40px;
+margin-bottom:35px;
+flex-wrap:wrap;
+}
+
+.stats div h3{
+font-size:32px;
+background:linear-gradient(45deg,#06b6d4,#ec4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.stats div p{
+font-size:13px;
+color:#94a3b8;
+margin:0;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+display:inline-block;
+cursor:pointer;
+border:none;
+font-family:inherit;
+font-size:15px;
+}
+
+.btn1{
+background:linear-gradient(45deg,#06b6d4,#7c3aed);
+color:white;
+}
+
+.btn2{
+border:2px solid #06b6d4;
+color:white;
+background:transparent;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.hero-img{
+flex:1;
+min-width:280px;
+text-align:center;
+animation:float 4s ease-in-out infinite;
+position:relative;
+}
+
+.hero-img::before{
+content:"";
+position:absolute;
+inset:0;
+margin:auto;
+width:380px;
+height:500px;
+border-radius:30px;
+background:linear-gradient(45deg,#06b6d4,#ec4899);
+filter:blur(40px);
+opacity:0.15;
+z-index:0;
+}
+
+.hero-img img{
+position:relative;
+z-index:1;
+width:380px;
+height: 500px;
+object-fit:cover;
+border-radius:30px;
+border:3px solid rgba(6,182,212,0.6);
+box-shadow:0 0 18px rgba(6,182,212,0.3);
+}
+
+/* SECTION */
+
+section{
+padding:100px 8%;
+}
+
+.eyebrow-center{
+text-align:center;
+display:block;
+color:#22d3ee;
+letter-spacing:2px;
+text-transform:uppercase;
+font-size:13px;
+font-weight:600;
+margin-bottom:14px;
+}
+
+.title{
+text-align:center;
+font-size:50px;
+margin-bottom:18px;
+background:linear-gradient(45deg,#06b6d4,#ec4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:800;
+}
+
+.subtitle{
+text-align:center;
+color:#94a3b8;
+max-width:600px;
+margin:0 auto 60px;
+font-size:15px;
+line-height:1.7;
+}
+
+/* reveal animation */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover{
+transform:translateY(-15px) scale(1.03);
+background:linear-gradient(145deg,#7c3aed,#06b6d4);
+}
+
+.card i{
+font-size:45px;
+margin-bottom:20px;
+color:#06b6d4;
+}
+
+.card:hover i{
+color:white;
+}
+
+.card h3{
+font-size:26px;
+margin-bottom:15px;
+}
+
+.card p{
+color:#94a3b8;
+line-height:1.7;
+font-size:14.5px;
+}
+
+.card:hover p{
+color:rgba(255,255,255,0.9);
+}
+
+/* PROJECTS */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.project-box{
+border-radius:22px;
+overflow:hidden;
+position:relative;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+transition:0.45s;
+}
+
+.project-box:hover{
+transform:translateY(-10px);
+border-color:#06b6d4;
+box-shadow:0 20px 45px rgba(6,182,212,0.25);
+}
+
+.project-thumb{
+width:100%;
+height:230px;
+overflow:hidden;
+position:relative;
+}
+
+.project-thumb img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.6s ease;
+}
+
+.project-box:hover .project-thumb img{
+transform:scale(1.12);
+}
+
+.project-thumb::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to top, rgba(5,8,22,0.95), transparent 60%);
+}
+
+.project-body{
+padding:24px 26px 28px;
+}
+
+.project-tags{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-bottom:14px;
+}
+
+.project-tags span{
+font-size:11.5px;
+padding:5px 12px;
+border-radius:20px;
+background:rgba(6,182,212,0.12);
+border:1px solid rgba(6,182,212,0.35);
+color:#67e8f9;
+font-weight:600;
+letter-spacing:0.3px;
+}
+
+.project-body h3{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.project-body p{
+color:#94a3b8;
+font-size:14px;
+line-height:1.7;
+margin-bottom:20px;
+min-height:65px;
+}
+
+.project-link{
+display:inline-flex;
+align-items:center;
+gap:8px;
+color:#fff;
+text-decoration:none;
+font-weight:600;
+font-size:14.5px;
+padding:11px 22px;
+border-radius:30px;
+background:linear-gradient(45deg,#06b6d4,#7c3aed);
+transition:0.35s;
+}
+
+.project-link i{
+transition:0.35s;
+}
+
+.project-link:hover{
+gap:13px;
+box-shadow:0 8px 20px rgba(124,58,237,0.45);
+}
+
+/* SKILLS */
+
+.skills{
+text-align:center;
+}
+
+.skills span{
+display:inline-block;
+padding:15px 28px;
+margin:12px;
+border-radius:40px;
+background:linear-gradient(45deg,#06b6d4,#ec4899);
+font-weight:600;
+transition:0.4s;
+}
+
+.skills span:hover{
+transform:scale(1.1) rotate(-2deg);
+}
+
+/* CONTACT */
+
+.contact-form{
+max-width:800px;
+margin:auto;
+}
+
+.form-row{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.form-row input{
+flex:1;
+min-width:230px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:18px;
+margin-bottom:20px;
+border:1px solid rgba(255,255,255,0.1);
+border-radius:15px;
+background:rgba(255,255,255,0.06);
+color:white;
+font-size:16px;
+font-family:inherit;
+transition:0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+outline:none;
+border-color:#06b6d4;
+background:rgba(255,255,255,0.09);
+}
+
+.contact-form button{
+border:none;
+cursor:pointer;
+}
+
+/* SOCIAL */
+
+.socials{
+margin-top:30px;
+display:flex;
+gap:20px;
+}
+
+.socials a{
+width:50px;
+height:50px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(45deg,#06b6d4,#7c3aed);
+color:white;
+font-size:22px;
+transition:0.4s;
+text-decoration:none;
+}
+
+.socials a:hover{
+transform:translateY(-8px) rotate(8deg);
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:58px;
+height:58px;
+border-radius:50%;
+background:#25d366;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(37,211,102,0.35);
+z-index:999;
+animation:float 3s ease-in-out infinite;
+}
+
+/* FOOTER */
+
+footer{
+text-align: center;
+padding: 30px;
+background: #000;
+color: white;
+position: relative;
+border-radius: 10px;
+overflow: hidden;
+margin:0 8% 40px;
+}
+
+footer::before{
+content: "";
+position: absolute;
+width: 500px;
+height: 500px;
+background: conic-gradient(
+transparent,
+transparent,
+transparent,
+rgb(0, 255, 26)
+);
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+animation: rotate 3s linear infinite;
+}
+
+footer::after{
+content: "";
+position: absolute;
+inset: 4px;
+background: #000;
+border-radius: 10px;
+}
+
+footer h1,
+footer p,
+footer span{
+position: relative;
+z-index: 2;
+}
+
+@keyframes rotate{
+0%{
+transform: translate(-50%, -50%) rotate(0deg);
+}
+100%{
+transform: translate(-50%, -50%) rotate(360deg);
+}
+}
+
+/* ANIMATION */
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:46px;
+}
+
+.stats{
+justify-content:center;
+}
+
+.hero-img img{
+width:300px;
+height:auto;
+}
+
+.hero-img::before{
+width:300px;
+height:380px;
+}
+
+.title{
+font-size:36px;
+}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="logo">
+<div class="ilogo"></div>
+</div>
+
+<nav id="nav">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="menu-btn" id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<div class="eyebrow"><span></span> Available for freelance work</div>
+
+<h1>
+Hi, I'm <span>HASNAIN JAC</span>
+</h1>
+
+<div class="typing" id="typing"></div>
+
+<p>
+I create premium colorful websites with modern animations,
+responsive layouts and beautiful user experiences.
+Below is a collection of real projects I've built — explore them live.
+</p>
+
+<div class="stats">
+<div>
+<h3>9+</h3>
+<p>Projects Built</p>
+</div>
+<div>
+<h3>11+</h3>
+<p>Technologies</p>
+</div>
+<div>
+<h3>100%</h3>
+<p>Responsive</p>
+</div>
+</div>
+
+<div class="buttons">
+
+<a href="#projects" class="btn btn1">View Projects</a>
+
+<a href="#contact" class="btn btn2">Hire Me</a>
+
+</div>
+
+<div class="socials">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+</div>
+
+</div>
+
+<div class="hero-img">
+
+<img src="img/jac.png" alt="Profile photo" class="jac">
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<span class="eyebrow-center">What I Do</span>
+<h2 class="title reveal">My Services</h2>
+<p class="subtitle reveal">A quick look at the kind of work I take on, from full builds to polish and optimization.</p>
+
+<div class="cards">
+
+<div class="card reveal">
+<i class="fa-solid fa-code"></i>
+<h3>Web Development</h3>
+<p>
+Modern responsive websites using latest technologies.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-palette"></i>
+<h3>UI / UX Design</h3>
+<p>
+Beautiful and user friendly interface design.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-mobile-screen"></i>
+<h3>Mobile Responsive</h3>
+<p>
+Perfect layouts for desktop, tablet and mobile.
+</p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-rocket"></i>
+<h3>SEO Optimization</h3>
+<p>
+Fast websites optimized for Google ranking.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<span class="eyebrow-center">Portfolio</span>
+<h2 class="title reveal">My Projects</h2>
+<p class="subtitle reveal">Real, working websites — click any card to open the live project in a new tab.</p>
+
+<div class="projects-grid">
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/zoo/assest/Gallery/G3.jpg" alt="The Safari Zoo website">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Multi-page</span></div>
+<h3>The Safari — Zoo Website</h3>
+<p>Full multi-page zoo website with animal &amp; bird directories, live camera page, interactive zoo map and contact form.</p>
+<a href="projects/zoo/index.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/asim-jofa/img/slider-3.jpg" alt="Asim Jofa fashion website">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span><span>E-commerce UI</span></div>
+<h3>Asim Jofa — Fashion Store</h3>
+<p>Elegant landing page for a luxury clothing brand with a hero slider, product highlights and collection sections.</p>
+<a href="projects/asim-jofa/index.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/sos-tti/img/Bugatti-Divo-2.jpg" alt="Bugatti automotive website">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span><span>Multi-page</span></div>
+<h3>Bugatti — Car Showcase</h3>
+<p>Multi-page automotive website with gallery, events, services and contact pages built around the Bugatti brand.</p>
+<a href="projects/sos-tti/index.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/calculator/img/71MYZo9x5TL._AC_UF1000,1000_QL80_.jpg" alt="Calculator app">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+<h3>Calculator App</h3>
+<p>A fully functional calculator built with vanilla JavaScript — handles arithmetic operations with a clean UI.</p>
+<a href="projects/calculator/index2.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/jooni/images/slider2.jpg" alt="Jooni Luxury Jewelry website">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span><span>E-commerce</span></div>
+<h3>Jooni — Luxury Jewelry</h3>
+<p>Jewelry e-commerce style website with product listing, about and contact pages, finished with a premium feel.</p>
+<a href="projects/jooni/index.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/mustang/img/grid-img-6.avif" alt="Ford Mustang GT website">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span><span>Animation</span></div>
+<h3>Ford Mustang® GT</h3>
+<p>High-impact car landing page with bold visuals, scroll animations and a sporty, dealership-style layout.</p>
+<a href="projects/mustang/index.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/perfume/img/img4.jpg" alt="Melange Fragrances perfume website">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span><span>Multi-page</span></div>
+<h3>Melange Fragrances</h3>
+<p>Perfume brand website with separate men's &amp; women's collection pages and a styled contact section.</p>
+<a href="projects/perfume/index.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/plant/img/img1-removebg-preview.png" alt="Plant store website">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span></div>
+<h3>Plant Store Landing Page</h3>
+<p>Clean, nature-themed landing page for an online plant shop with product cards and a soft color palette.</p>
+<a href="projects/plant/index.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-box reveal">
+<div class="project-thumb">
+<img src="projects/amazon-clone/pbs.jpg" alt="Amazon clone website">
+</div>
+<div class="project-body">
+<div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Clone</span></div>
+<h3>Amazon — E-commerce Clone</h3>
+<p>A practice clone of Amazon's storefront layout, covering product grids, categories and a familiar shopping UI.</p>
+<a href="projects/amazon-clone/index.html" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<span class="eyebrow-center">Toolbox</span>
+<h2 class="title reveal">My Skills</h2>
+<p class="subtitle reveal">Technologies and tools I use to design, build and ship websites.</p>
+
+<div class="skills reveal">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>React</span>
+<span>Tailwind</span>
+<span>Bootstrap</span>
+<span>Node.js</span>
+<span>MongoDB</span>
+<span>Firebase</span>
+<span>GitHub</span>
+<span>Figma</span>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<span class="eyebrow-center">Get In Touch</span>
+<h2 class="title reveal">Contact Me</h2>
+<p class="subtitle reveal">Have a project in mind? Fill the form below and I'll get back to you.</p>
+
+<form class="contact-form reveal">
+
+<div class="form-row">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+</div>
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="7" placeholder="Your Message"></textarea>
+
+<button type="submit" class="btn btn1">Send Message</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 JAC Portfolio | Made With ❤️
+</p>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/923000000000" class="whatsapp">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- SCRIPT -->
+
+<script>
+
+/* TYPING EFFECT */
+
+const text = [
+"Frontend Developer",
+"UI / UX Designer",
+"Creative Coder",
+"Freelancer"
+];
+
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
+
+(function type(){
+
+if(count === text.length){
+count = 0;
+}
+
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById('typing').textContent = letter;
+
+if(letter.length === currentText.length){
+count++;
+index = 0;
+setTimeout(type,1000);
+}else{
+setTimeout(type,120);
+}
+
+})();
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+
+menuBtn.addEventListener('click', () => {
+nav.classList.toggle('open');
+});
+
+nav.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', () => nav.classList.remove('open'));
+});
+
+/* SCROLL REVEAL */
+
+const revealEls = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15 });
+
+revealEls.forEach(el => observer.observe(el));
+
+</script>
+
+</body>
+</html>
